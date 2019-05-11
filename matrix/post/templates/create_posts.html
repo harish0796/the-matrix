@@ -1,0 +1,43 @@
+{% extends 'layout.html' %} 
+{% block 'body' %}
+<div class="row mt-5">
+    <div class="col-md-12 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-blog"></i> Create Post
+        </h1>
+        <form action="/post/createposts/" method="POST">{% csrf_token %}
+          <div class="form-group">
+            <label for="name">Post Name</label>
+            <textarea
+            style="min-width:100%"
+              type="text"
+              size="100"
+              id="post_name"
+              name="post_name"
+              class="form-control-lg"
+              placeholder="Give an appropriate heading..."
+              value=""
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="name">Post</label>
+            <textarea
+              type="text"
+              size="10000"
+              rows="20"
+              id="post_body"
+              name="post_body"
+              class="form-control"
+              placeholder="Start writing here...."
+              value=""
+            ></textarea>
+          
+          <button type="submit" class="btn btn-primary btn-block">
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
