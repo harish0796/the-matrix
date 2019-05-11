@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required
+@login_required(login_url='/users/login')
 def dashboard(request):
     print("dashboard:",request)
     return render(request,'dashboard.html')
